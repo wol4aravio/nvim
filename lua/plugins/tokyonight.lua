@@ -6,7 +6,7 @@ return {
         opts = {},
         config = function()
             require("tokyonight").setup({
-                transparent = true,
+                -- transparent = true,
             })
             vim.cmd([[colorscheme tokyonight]])
         end,

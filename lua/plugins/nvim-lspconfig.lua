@@ -5,7 +5,8 @@ return {
 			local lspconfig = require("lspconfig")
 			-- Supported languages
             vim.lsp.enable("lua_ls")
-
+            
+            -- Basic config & binginds
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)

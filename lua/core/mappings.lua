@@ -15,7 +15,7 @@ vim.keymap.set('n', '|', ':vsplit<CR>')
 vim.keymap.set('n', '\\', ':split<CR>')
 
 -- Neovim
-vim.keymap.set('n', '<leader>e', ':Neotree left toggle reveal<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal<CR>')
 
 -- Buffetline
 vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>')

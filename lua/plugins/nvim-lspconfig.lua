@@ -3,17 +3,17 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			-- Supported languages
-            vim.lsp.enable("lua_ls")
-            vim.lsp.config("lua_ls", {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" }
-                        }
-                    }
-                }
-            })
-            -- Basic config & binginds
+			vim.lsp.enable("lua_ls")
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+					},
+				},
+			})
+			-- Basic config & binginds
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)

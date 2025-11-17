@@ -1,5 +1,5 @@
 -- Basic editor's view
-vim.wo.number = true 
+vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Mouse
@@ -17,17 +17,16 @@ vim.opt.softtabstop = 4
 
 -- Editor
 vim.opt.fillchars = {
-    vert = "│",
-    fold = "⠀",
-    eob = " ", 
-    msgsep = "‾",
-    foldopen = "▾",
-    foldsep = "│",
-    foldclose = "▸"
+	vert = "│",
+	fold = "⠀",
+	eob = " ",
+	msgsep = "‾",
+	foldopen = "▾",
+	foldsep = "│",
+	foldclose = "▸",
 }
 
 -- etc
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
 vim.opt.termguicolors = true
-

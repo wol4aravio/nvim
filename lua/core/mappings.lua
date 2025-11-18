@@ -16,9 +16,3 @@ vim.keymap.set("n", "\\", ":split<CR>")
 
 -- Neovim
 vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal<CR>")
-
--- Buffetline
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>x", ":BufferLinePickClose<CR>")
-vim.keymap.set("n", "<c-x>", ":BufferLineCloseOthers<CR>")

@@ -7,3 +7,5 @@ require("core.lazy")
 
 -- local editor settings
 vim.opt.signcolumn = "yes"
+
+-- Autostart

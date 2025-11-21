@@ -14,5 +14,5 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "|", ":vsplit<CR>")
 vim.keymap.set("n", "\\", ":split<CR>")
 
--- Neovim
-vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal<CR>")
+-- Bindings for plugins
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file tree" })

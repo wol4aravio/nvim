@@ -5,16 +5,7 @@ return {
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"lua",
-					-- "dockerfile",
-					-- "helm",
-					-- "javascript",
-					-- "typescript",
-					-- "python",
-                    -- "go",
-                    -- "rust",
-                    -- "json",
-                    -- "yaml",
-                    -- "kotlin",
+					"dockerfile",
 				},
 				auto_install = true,
 				highlight = {

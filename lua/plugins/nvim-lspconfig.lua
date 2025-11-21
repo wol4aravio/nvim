@@ -3,6 +3,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			-- Supported languages
+			-- Lua
 			vim.lsp.enable("lua_ls")
 			vim.lsp.config("lua_ls", {
 				settings = {
@@ -13,6 +14,9 @@ return {
 					},
 				},
 			})
+			-- Docker
+			vim.lsp.enable("docker_language_server")
+			vim.lsp.enable("dockerls")
 			-- Basic config & binginds
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),

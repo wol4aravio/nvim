@@ -6,6 +6,7 @@ return {
 				ensure_installed = {
 					"lua",
 					"dockerfile",
+					"yaml",
 				},
 				auto_install = true,
 				highlight = {

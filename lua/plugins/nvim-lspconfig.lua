@@ -17,6 +17,26 @@ return {
 			-- Docker
 			vim.lsp.enable("docker_language_server")
 			vim.lsp.enable("dockerls")
+			vim.lsp.enable("docker_compose_language_service")
+			-- Text files
+			vim.lsp.enable("yamlls")
+			vim.lsp.config("yamlls", {
+				settings = {
+					yaml = {
+						validate = true,
+						hover = true,
+						completion = true,
+						schemas = {
+							["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+								"docker-compose.yml",
+								"docker-compose.yaml",
+								"compose.yml",
+								"compose.yaml",
+							},
+						},
+					},
+				},
+			})
 			-- Basic config & binginds
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),

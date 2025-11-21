@@ -16,7 +16,23 @@ return {
 					-- Docker
 					"docker_language_server",
 					"dockerls",
+					"docker_compose_language_service",
+					-- Files
+					"yamlls",
 				},
+			})
+		end,
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"stylua",
+					"prettierd",
+				},
+				run_on_start = true,
+				auto_update = false,
 			})
 		end,
 	},

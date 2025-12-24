@@ -114,7 +114,6 @@ return {
 			vim.lsp.config("ruff", {
 				cmd = { "ruff", "server" },
 				root_dir = python_root_dir,
-				init_options = {},
 				on_attach = function(client, _)
 					client.server_capabilities.hoverProvider = false
 				end,

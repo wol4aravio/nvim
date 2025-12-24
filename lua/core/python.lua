@@ -38,7 +38,6 @@ local function find_project_venv(workspace)
 end
 
 local function find_poetry_venv(workspace)
-	-- Не дергаем poetry без необходимости: сначала проверяем, что это реально poetry-проект.
 	if not exists(path_join(workspace, "poetry.lock")) then
 		return nil
 	end
@@ -46,7 +45,6 @@ local function find_poetry_venv(workspace)
 		return nil
 	end
 
-	-- Важно: не блокируем Neovim надолго.
 	local ok, result = pcall(function()
 		return vim.system({ "poetry", "env", "info", "-p" }, { cwd = workspace, text = true }):wait(1500)
 	end)
@@ -66,8 +64,6 @@ local function find_poetry_venv(workspace)
 	return nil
 end
 
----Возвращает путь до Python-интерпретатора, который надо отдать Pyright'у.
----Поддерживает: standalone файлы, .venv/venv, uv, poetry, активированный VIRTUAL_ENV.
 ---@param workspace string?
 ---@return string
 function M.get_python_path(workspace)
@@ -77,21 +73,18 @@ function M.get_python_path(workspace)
 		return cache[workspace]
 	end
 
-	-- 1) Виртуалка в самом проекте (.venv/venv/…)
 	local python = find_project_venv(workspace)
 	if python then
 		cache[workspace] = python
 		return python
 	end
 
-	-- 2) Poetry (если виртуалка не в проекте)
 	python = find_poetry_venv(workspace)
 	if python then
 		cache[workspace] = python
 		return python
 	end
 
-	-- 3) Активированная виртуалка из окружения (например, если запускали nvim из `source .venv/bin/activate`)
 	local venv = vim.env.VIRTUAL_ENV
 	if venv and venv ~= "" then
 		python = venv_python(venv)
@@ -101,7 +94,6 @@ function M.get_python_path(workspace)
 		end
 	end
 
-	-- 4) Системный python
 	python = vim.fn.exepath("python3")
 	if python == "" then
 		python = vim.fn.exepath("python")

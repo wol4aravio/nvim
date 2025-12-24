@@ -15,7 +15,6 @@ return {
 				},
 			})
 			-- Docker
-			vim.lsp.enable("docker_language_server")
 			vim.lsp.enable("dockerls")
 			vim.lsp.enable("docker_compose_language_service")
 			-- Text files

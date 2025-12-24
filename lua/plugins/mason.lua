@@ -14,11 +14,12 @@ return {
 					"lua_ls",
 					"stylua",
 					-- Docker
-					"docker_language_server",
 					"dockerls",
 					"docker_compose_language_service",
 					-- Files
 					"yamlls",
+					-- Python
+					"pyright",
 				},
 			})
 		end,
@@ -28,8 +29,12 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
+					-- Lua
 					"stylua",
+					-- YAML
 					"prettierd",
+					-- Python
+					"ruff",
 				},
 				run_on_start = true,
 				auto_update = false,

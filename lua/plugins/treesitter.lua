@@ -7,6 +7,7 @@ return {
 					"lua",
 					"dockerfile",
 					"yaml",
+					"python",
 				},
 				auto_install = true,
 				highlight = {

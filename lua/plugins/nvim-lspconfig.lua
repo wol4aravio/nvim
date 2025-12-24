@@ -83,9 +83,23 @@ return {
 			vim.lsp.config("pyright", {
 				cmd = { "pyright-langserver", "--stdio" },
 				root_dir = python_root_dir,
-				before_init = function(_, config)
-					local root_dir = config.root_dir or vim.fn.getcwd()
-					local python_path = python.get_python_path(root_dir)
+				before_init = function(init_params, config)
+					local root = nil
+
+					if init_params and init_params.rootUri then
+						root = vim.uri_to_fname(init_params.rootUri)
+					elseif
+						init_params
+						and init_params.workspaceFolders
+						and init_params.workspaceFolders[1]
+						and init_params.workspaceFolders[1].uri
+					then
+						root = vim.uri_to_fname(init_params.workspaceFolders[1].uri)
+					end
+
+					root = root or vim.fn.getcwd()
+
+					local python_path = python.get_python_path(root)
 
 					config.settings = config.settings or {}
 					config.settings.python = config.settings.python or {}

@@ -7,6 +7,8 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					yaml = { "prettierd" },
+					json = { "prettierd" },
+					jsonc = { "prettierd" },
 					python = {
 						"ruff_fix",
 						"ruff_organize_imports",

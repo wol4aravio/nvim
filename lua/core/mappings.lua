@@ -28,3 +28,5 @@ vim.keymap.set("n", "<leader>br", "<cmd>BufferLineCloseRight<CR>", { desc = "Clo
 vim.keymap.set("n", "<leader>bn", "<cmd>BufferLineTogglePin<CR>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>Bdelete<CR>", { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>bD", "<cmd>Bdelete!<CR>", { desc = "Force delete buffer" })
+vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })

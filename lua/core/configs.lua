@@ -28,7 +28,7 @@ vim.opt.fillchars = {
 
 -- etc
 vim.opt.scrolloff = 8
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.termguicolors = true
 
 -- virtual diagnostics text
